@@ -1,15 +1,14 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "minor/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "minor/dist"
-      }
-    }
-  ],
+  "cleanUrls": true,
   "routes": [
-    { "src": "/(.*)", "dest": "minor/dist/index.html" }
+    {
+      "src": "/",
+      "dest": "/minor/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/minor/$1"
+    }
   ]
 }
