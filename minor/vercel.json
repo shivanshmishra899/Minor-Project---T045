@@ -3,16 +3,13 @@
   "builds": [
     {
       "src": "minor/package.json",
-      "use": "@vercel/node"
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "minor/dist"
+      }
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "minor/$1" }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "src": "/(.*)", "dest": "minor/dist/index.html" }
   ]
-
-
-
 }
